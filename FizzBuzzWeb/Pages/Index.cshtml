@@ -1,0 +1,50 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "FizzBuzz";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome Player</h1>
+    <form method="post">
+        <div class="text-center">
+            <div class="text-center">
+                <label asp-for="FizzBuzz.Your_Number"></label><br />
+                <input asp-for="FizzBuzz.Your_Number" /><br />
+                <strong>
+                    <span asp-validation-for="FizzBuzz.Your_Number" class="text-danger"></span>
+                </strong>
+            </div>
+        </div>
+        <p>
+        </p>
+        <div class="text-center">
+            <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </form>
+    <p></p>
+    @if (Model.FizzBuzz != null && ModelState.IsValid)
+    {
+        <p>
+            @{
+                String result = "";
+                if (Model.FizzBuzz.Your_Number % 3 == 0)
+                {
+                    result += "Fizz";
+                }
+                if (Model.FizzBuzz.Your_Number % 5 == 0)
+                {
+                    result += "Buzz";
+                }
+                if (Model.FizzBuzz.Your_Number % 3 != 0 && Model.FizzBuzz.Your_Number % 5 != 0)
+                {
+                    <span>Your number is not Fizz, Buzz or Fizzbuzz</span>
+                }
+            }
+        </p>
+        if (result != "")
+        {
+            <span>Result: @result</span>
+        }
+    }
+</div>
