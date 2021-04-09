@@ -18,6 +18,8 @@ namespace FizzBuzzWeb.Pages
         [BindProperty]
         public FizzBuzz FizzBuzz { get; set; }
 
+        public string result = "";
+
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;

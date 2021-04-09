@@ -3,8 +3,9 @@
 @{
     ViewData["Title"] = "FizzBuzz";
 }
+
 <h1>FizzBuzz</h1>
-@if (Model.FizzBuzz != null)
+@if (Model.FizzBuzz != null && ModelState.IsValid)
 {
     <p>
         Your number:
@@ -15,20 +16,7 @@
         @DateTime.Now
     </p>
     <p>
-        @{String result = "";
-            @if (Model.FizzBuzz.Your_Number % 3 == 0)
-            {
-                result += "Fizz";
-            }
-            @if (Model.FizzBuzz.Your_Number % 5 == 0)
-            {
-                result += "Buzz";
-            }
-            @if (Model.FizzBuzz.Your_Number % 3 != 0 && Model.FizzBuzz.Your_Number % 5 != 0)
-            {
-                <span>Your number is not Fizz, Buzz or Fizzbuzz</span>
-            }
-            <span>Result: @result</span>
-        }
+        @Model.FizzBuzz.FizzBuzzApp()
+        <span>Result: @Model.FizzBuzz.result</span>
     </p>
 }
