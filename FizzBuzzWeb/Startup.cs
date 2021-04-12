@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using FizzBuzzWeb.Data;
 
 namespace FizzBuzzWeb
 {
@@ -23,6 +25,9 @@ namespace FizzBuzzWeb
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDbContext<FizzBuzzContext>(options => {
+                options.UseSqlServer(Configuration.GetConnectionString("FizzBuzzDBv2"));
+            });
             services.AddRazorPages();
             services.AddMemoryCache();
             services.AddSession(options =>

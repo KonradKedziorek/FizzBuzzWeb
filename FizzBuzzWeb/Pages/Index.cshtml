@@ -25,7 +25,6 @@
     <p></p>
     @if (Model.FizzBuzz != null && ModelState.IsValid)
     {
-        @Model.FizzBuzz.FizzBuzzApp()
-        <span>Result: @Model.FizzBuzz.result</span>
+        <span>Result: @Model.FizzBuzz.FizzBuzzApp()</span>
     }
 </div>

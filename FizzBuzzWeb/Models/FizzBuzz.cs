@@ -10,14 +10,18 @@ namespace FizzBuzzWeb.Pages.Models
 {
     public class FizzBuzz
     {
+        public int ID { get; set; }
+
         [Display(Name = "Enter an integer number")]
         [Range(1, 1000, ErrorMessage = "Number out of range 1 - 1000! Try again"),
          Required(ErrorMessage = "This field is required")]
         public int Your_Number { get; set; }
 
-        public string result = "";
+        public DateTime time { get; set; } = DateTime.Now;
 
-        public object FizzBuzzApp()
+        public string result { get; set; } = "";
+
+        public string FizzBuzzApp()
         {
             if (Your_Number % 3 == 0)
             {
@@ -31,7 +35,7 @@ namespace FizzBuzzWeb.Pages.Models
             {
                 result += "Your number is not Fizz, Buzz or Fizzbuzz";
             }
-            return null;
+            return result;
         }
     }
 }
