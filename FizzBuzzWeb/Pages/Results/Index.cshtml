@@ -26,50 +26,24 @@
         </tr>
     </thead>
     <tbody>
-        @if (Model.FizzBuzz.Count > 10)
+        @foreach (var item in Model.FizzBuzz)
         {
-            @for (int i = Model.FizzBuzz.Count-1; i > Model.FizzBuzz.Count - 11; i--)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => Model.FizzBuzz[i].Your_Number)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => Model.FizzBuzz[i].time)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => Model.FizzBuzz[i].result)
-                    </td>
-                    <td>
-                        @*<a asp-page="./Edit" asp-route-id="@Model.FizzBuzz[i].ID">Edit</a> |*@
-                        <a asp-page="./Details" asp-route-id="@Model.FizzBuzz[i].ID">Details</a> |
-                        <a asp-page="./Delete" asp-route-id="@Model.FizzBuzz[i].ID">Delete</a>
-                    </td>
-                </tr>
-            }
-        }else
-        {
-            for (int i = Model.FizzBuzz.Count-1; i>0; i--)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => Model.FizzBuzz[i].Your_Number)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => Model.FizzBuzz[i].result)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => Model.FizzBuzz[i].time)
-                    </td>
-                    <td>
-                        @*<a asp-page="./Edit" asp-route-id="@Model.FizzBuzz[i].ID">Edit</a> |*@
-                        <a asp-page="./Details" asp-route-id="@Model.FizzBuzz[i].ID">Details</a> |
-                        <a asp-page="./Delete" asp-route-id="@Model.FizzBuzz[i].ID">Delete</a>
-                    </td>
-                </tr>
-                }
-            }
-
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Your_Number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.time)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.result)
+                </td>
+                <td>
+                    @*<a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |*@
+                    @*<a asp-page="./Details" asp-route-id="@item.ID">Details</a> |*@
+                    <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>
