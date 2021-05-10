@@ -26,8 +26,7 @@ namespace FizzBuzzWeb.Pages.Results
         public void OnGet()
         {
             //FizzBuzz = await _context.FizzBuzz.ToListAsync();
-            FizzBuzz = _context.FizzBuzz.OrderByDescending(d => d.time).Take(10).ToList();
+            FizzBuzz = _context.FizzBuzz.OrderByDescending(d => d.time).Take(20).ToList();
         }
-
     }
 }
