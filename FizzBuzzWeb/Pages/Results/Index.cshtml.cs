@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using FizzBuzzWeb.Data;
 using FizzBuzzWeb.Pages.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FizzBuzzWeb.Pages.Results
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly FizzBuzzWeb.Data.FizzBuzzContext _context;
