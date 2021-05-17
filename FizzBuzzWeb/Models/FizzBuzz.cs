@@ -25,7 +25,7 @@ namespace FizzBuzzWeb.Pages.Models
         public int IdForeignKey { get; set; }
 
         [ForeignKey("IdForeignKey")]
-        public AspNetUsers Id { get; set; }
+        public AspNetUsers AspNetUsersId { get; set; }
 
         public string FizzBuzzApp()
         {

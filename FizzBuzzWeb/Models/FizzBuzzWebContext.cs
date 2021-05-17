@@ -1,4 +1,6 @@
 ﻿using System;
+using FizzBuzzWeb.Data;
+using FizzBuzzWeb.Pages.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 

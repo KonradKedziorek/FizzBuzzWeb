@@ -11,5 +11,10 @@ namespace FizzBuzzWeb.Data
     {
         public FizzBuzzContext(DbContextOptions options) : base(options) { }
         public DbSet<FizzBuzz> FizzBuzz { get; set; }
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            builder.Entity<FizzBuzzWebContext>()
+            .HasNoKey();
+        }
     }
 }
