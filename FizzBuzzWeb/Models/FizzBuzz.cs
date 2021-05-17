@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
+using FizzBuzzWeb.Models;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FizzBuzzWeb.Pages.Models
 {
@@ -20,6 +22,10 @@ namespace FizzBuzzWeb.Pages.Models
         public DateTime time { get; set; } = DateTime.Now;
 
         public string result { get; set; } = "";
+        public int IdForeignKey { get; set; }
+
+        [ForeignKey("IdForeignKey")]
+        public AspNetUsers Id { get; set; }
 
         public string FizzBuzzApp()
         {
